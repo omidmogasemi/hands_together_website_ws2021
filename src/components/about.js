@@ -8,6 +8,7 @@ import team from  "../images/ourteam.png";
 {/* TODO: Insert redirection link to "our team" page */}
 {/* TODO: Images of Preschool and Morning Garden resize for smaller screens, 
         but it stays a certain size after a point and does not resize further */}
+// vercel please update 
 
 function About() {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 769 ? true : false); 
