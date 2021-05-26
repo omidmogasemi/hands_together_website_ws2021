@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/donation.css";
 require('dotenv').config();
 const axios = require('axios');
+// forcing a vercel update inside of here 
 
 function Donation() {
   const [donation, setDonation] = useState("");
@@ -23,6 +24,7 @@ function Donation() {
   function checkout(donationAmount) {
     // console.log(donationAmount);
     // console.log(type);
+    console.log(process.env.REACT_APP_STRIPE_KEY); 
     var stripe = window.Stripe(process.env.REACT_APP_STRIPE_KEY);
 
     const req = {
