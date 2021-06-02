@@ -61,8 +61,8 @@ function Admin_Dashboard(props) {
       return; 
     } 
 
-    if (new_announcement.length > 90) { 
-      setStatusMessage("There is a max limit of 90 characters."); 
+    if (newAnnouncement.length > 206) { 
+      setStatusMessage("There is a max limit of 205 characters."); 
       return; 
     } 
 
@@ -140,8 +140,8 @@ function Admin_Dashboard(props) {
             <p style={{marginTop: "1rem", marginRight: "1rem"}}>New Announcement:</p>
               <div className="col-10 col-md-6">
                   <input type="text" placeholder="New Announcement" value={newAnnouncement} onChange={onNewAnnouncementChange} /> 
+                  <p style={{marginTop: "0.5rem"}}>Max 205 characters</p>
               </div>
-              <p>Max 90 characters</p>
           </div>
           <button className="submit-button" style={{marginBottom: "0.5rem", width: "16rem"}} onClick={addAnnouncement}>Create New Announcement</button>
           <p style={{marginBottom: "2rem"}}>{statusMessage}</p>

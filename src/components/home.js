@@ -36,7 +36,7 @@ function Home() {
             <div className="col-12 large-overlay" style={{padding: "0"}}> 
                 {curAnnouncement.length > 0 ? 
                 <div className="banner"> 
-                    <h2 className="announcement-text" align="center">{curAnnouncement}</h2> 
+                    <h2 className="announcement-text" align="center" style={{marginTop: (curAnnouncement.length > 95) ? "0.5rem" : "1.35rem", marginLeft: (curAnnouncement.length > 95) ? "0.5rem" : "0rem", marginRight: (curAnnouncement.length > 95) ? "0.5rem" : "0rem"}}>{curAnnouncement}</h2> 
                 </div> 
                 : 
                 <></> 
