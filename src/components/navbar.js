@@ -363,8 +363,10 @@ function Navbar(props) {
                     <p onClick={() => (window.location = "/about")}>About</p>
                     </div>
                     <div class="col-12">
-                    {/* Link to programs */}
                     <p onClick={() => (window.location = "/programs")}>Programs</p> 
+                    </div>
+                    <div class="col-12">
+                    <p onClick={() => (window.location = "/history")}>History</p> 
                     </div>
                     <div class="col-12">
                     <p onClick={() => (window.location = "/volunteer_events")}>Volunteer</p>
@@ -382,12 +384,15 @@ function Navbar(props) {
       <div className="navbar-content .d-none .d-sm-block" align="center">
         <div class="container-fluid p-0">
           <div class="row no-gutters">
-            <div class="col-2 offset-1">
+            <div class="col-2">
               <h4 onClick={() => (window.location = "/about")}className="text">About</h4>
             </div>
             <div class="col-2">
               {/* Link to programs */}
               <h4 className="text" onClick={() => (window.location = "/programs")}>Programs</h4> 
+            </div>
+            <div class="col-2">
+              <h4 onClick={() => (window.location = "/history")}className="text">History</h4>
             </div>
             <div class="col-2">
               <h4 onClick={() => (window.location = "/volunteer_events")} className="text">
@@ -400,7 +405,6 @@ function Navbar(props) {
             <div class="col-2">
               <h4 onClick={() => (window.location = "/donation")} className="text">Donate</h4>
             </div>
-            <div className="col-1" />
           </div>
         </div>
       </div>

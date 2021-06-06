@@ -48,7 +48,7 @@ function Programs() {
             <div className="row no-gutters">
                 <div className="col-lg-6 side-info infoblurb" style={{padding: "0"}}> 
                 <h2 style={{fontWeight: "700"}}>Preschool</h2>
-                The preschool curriculum at Hands Together emphasizes English literacy, reading and math readiness skills.<br/><br/>
+                The preschool curriculum at Hands Together emphasizes English literacy, reading, and math readiness skills.<br/><br/>
                 Our services encompass:
                 <ul>
                   <li>Quality preschool and day care</li>
@@ -66,7 +66,7 @@ function Programs() {
         <div className="col-12 img-section" style={{padding: "0rem"}}>
           <img src={img2} className="full-width-image mobile-container-padding"/>
           <h2 className="overlay-text mobile-infoblurb mobile-container-padding">
-            Advanced early childhood education promotes academic achievement, higher high school graduation rates, and has been proven to ensure children reach their full potential.
+            Advanced early childhood education promotes academic achievement, higher high school graduation rates, and has been proven to support children achieving better educational outcomes in Kindergarten and beyond.
             <br/><br/>Hands Together’s enriched program brings hope and opportunity to central Orange County’s young learners and their families.
           </h2>
         </div>

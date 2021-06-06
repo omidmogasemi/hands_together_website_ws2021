@@ -183,7 +183,7 @@ function Shop(props) {
         <div className="header">
           <h1>Our Shop</h1>
           <h3>
-            Our handcrafted gifts for good are made by the parents in the Morning Garden Program. The Morning Garden Program provides the highest quality education to the children of working families. Each artisan can express their unique style in the creation of these hand-crafted goods. The embroidery styles are inspired by traditional techniques of various Latin American regions. All items are made of the best quality felt and 100% DMC cotton thread.
+            Our handcrafted gifts for good are made by the mothers in the Morning Garden Program. The Morning Garden Program provides the highest quality education to the children of working families. Each artisan can express her unique style in the creation of these hand-crafted goods. The embroidery styles are inspired by traditional techniques of various Latin American regions. All items are made of the best quality felt and 100% DMC cotton thread.
             <br/><br/>Proceeds from the sale of these items help our families gain economic stability and improve the emotional and physical lives of their families. 80% of the proceeds of these products are given directly to the artisan. The remaining 20% is used for the purchase of materials.
           </h3>
         </div>

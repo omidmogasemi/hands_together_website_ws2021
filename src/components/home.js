@@ -57,7 +57,7 @@ function Home() {
                 </div>
                 <div className="col-md-6"> 
                     <div className="about-us-text-width">
-                        <div className="infoblurb">Hands Together has been recognized at a state and national level for preparing young children for kindergarten. We offer advanced early education to over 165 at risk children each day. We do more than preschool preparation–the facility  works with working parents to enrich their lives, preparing them for the work place.</div>
+                        <div className="infoblurb">Hands Together has been recognized at a state and national level for preparing young children for kindergarten. We offer advanced early education to over 95 at risk children each day. We do more than preschool preparation–the facility works with working parents to enrich their lives, preparing them for the work place.</div>
                         <button className="lg-button lg-button-font-sizing large-screen-button" onClick={() => window.location = "/programs"} style={{backgroundColor: "var(--darkyellow)"}}>Learn More</button>
                         <button className="lg-button lg-button-font-sizing small-screen-button" style={{backgroundColor: "var(--darkred)"}}> 
                             <a href="/donation">Donate</a> 
@@ -84,7 +84,7 @@ function Home() {
                     <div className="program-container-padding" align="left"> 
                         <img src={kid} className="program-image"/> 
                         <h2 className="sub-title-padding">Morning Garden</h2>               
-                        <p>Morning Garden is a unique preschool and workforce development program for housing-insecure families and families in transition. We offer developmentally appropriate, structured activities that help young children learn how to play welltogether, share resources, and respect others. These skills prepare them for success in kindergarten, and create a foundation for their future educational achievements.</p>
+                        <p>Morning Garden is a unique preschool and workforce development program for housing-insecure families and families in transition. We offer developmentally appropriate, structured activities that help young children learn how to play well together, share resources, and respect others. These skills prepare them for success in kindergarten, and create a foundation for their future educational achievements.</p>
                         <button onClick={() => (window.location = "/programs")} className="sm-button programs-button-spacing" style={{backgroundColor: "var(--darkyellow)"}}> 
                             Learn More 
                         </button> 
@@ -98,7 +98,7 @@ function Home() {
                 </div>
                 <div className="row no-gutters">
                     <div className="col-lg-6" style={{padding: "0"}}> 
-                        <div className="infoblurb">Our handcrafted gifts for good are made by the parents in the Morning Garden Program. The Morning Garden Program provides the highest quality education to the children of working families.<br/><br/>Each artisan can express their unique style in the creation of these hand-crafted goods. The embroidery styles are inspired by traditional techniques of various Latin American regions. </div> 
+                        <div className="infoblurb">Our handcrafted gifts for good are made by the mothers in the Morning Garden Program. The Morning Garden Program provides the highest quality education to the children of working families.<br/><br/>Each artisan can express her unique style in the creation of these hand-crafted goods. The embroidery styles are inspired by traditional techniques of various Latin American regions. </div> 
                         <button className="lg-button lg-button-font-sizing" onClick={() => window.location = "/shop"} style={{backgroundColor: "var(--darkyellow)"}}>Shop now!</button>
                     </div> 
                     <div className="col-lg-6 img-container" style={{padding: "0"}} align="center">
@@ -113,7 +113,7 @@ function Home() {
                         </div>
                         <div class="col-4 col-md-4"/>
                         <div class="col-4 col-md-4" align="center">
-                            <h1 onClick={() => (window.location = "/our_team")} className="team">Our Team</h1>        
+                            <h1 onClick={() => (window.location = "/our_team")} className="team">Meet Our Team</h1>        
                         </div>     
                         <div class="col-4 col-md-4"/>
                     </div> 

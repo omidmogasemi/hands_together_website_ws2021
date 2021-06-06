@@ -14,6 +14,7 @@ import sold_items_test_routes from "./shop_dashboard/sold_items_test_routes";
 import Login from "./shop_dashboard/login";
 import donation from "./donation";
 import thank_you from "./transaction_pages/thank_you";
+import history from "./history"; 
 import cancel_donation from "./transaction_pages/cancel_donation";
 import volunteer_events from "./volunteer_events";
 import programs from "./programs"
@@ -23,7 +24,7 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import React, { useState, useEffect } from 'react'; 
 import GuardedRoute from './GuardedRoute';
 import {Switch} from 'react-router'
-import email from "./email";;
+import email from "./email";
 const axios = require('axios'); 
 // trigger a vercel update 
 
@@ -45,6 +46,7 @@ function App() {
           <Route exact path="/" component={home} />
           <Route exact path="/about" component={about} />
           <Route exact path="/our_team" component={ourTeam} />
+          <Route exact path="/history" component={history} />
           <Route exact path="/shop" render={(props) => (<Shop {...props} cartUpdate={cartUpdate} setCartUpdate={setCartUpdate}/>)} />
           <Route exact path="/item/:id" render={(props) => (<ItemPage {...props} />)} /> 
           <Route exact path="/shop/:id" render={(props) => (<ItemPage {...props} cartUpdate={cartUpdate} setCartUpdate={setCartUpdate}/>)} />
