@@ -8,9 +8,9 @@ function OurTeam() {
                 <h1>Our Team</h1>
                 <div className="person">
                     <h3><strong>Karina Chavez</strong>, Center Director</h3>
-                    <p>Karina has been in the field of early childhood education for 20 years. She began working with children while in high school and chose to stay in the field after graduation. She has been with Hands Together since the summer of 2005. She enjoys working at Hands Together because of the interactions staff and administration have with the children and their families and because 
+                    <p>Karina has been in the field of early childhood education for 20 years. She began working with children while in high school and chose to stay in the field after graduation. She has been with Hands Together since the summer of 2005. 
                     <br /><br />
-                    “It is always exciting seeing a child learn something new.” 
+                    She enjoys working at Hands Together because of the interactions staff and administration have with the children and their families and because “It is always exciting seeing a child learn something new.” 
                     </p>
                 </div>
                 <div className="person">
