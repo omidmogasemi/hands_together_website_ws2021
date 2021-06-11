@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/donation.css";
+import Modal from 'react-modal'; 
 require('dotenv').config();
 const axios = require('axios');
 // forcing a vercel update inside of here 
@@ -8,6 +9,7 @@ const axios = require('axios');
 function Donation() {
   const [donation, setDonation] = useState("");
   const [type, setType] = useState("");
+  const [modalIsOpen, setModalIsOpen] = useState(false); 
 
   function onDonationChange(event) {
     if(!isNaN(Number(event.target.value)))
@@ -22,6 +24,7 @@ function Donation() {
   }
 
   function checkout(donationAmount) {
+    openModal(); 
     // console.log(donationAmount);
     // console.log(type);
     console.log(process.env.REACT_APP_STRIPE_KEY); 
@@ -43,8 +46,44 @@ function Donation() {
       .catch(error => console.log(error))
   }
 
-  return(
+  function openModal() { 
+    setModalIsOpen(true); 
+  } 
+
+  function closeModal(){
+      setModalIsOpen(false);
+  }
+
+  const customModalStyles = { 
+    content : { 
+        top                   : '50%',
+        left                  : '50%',
+        right                 : 'auto',
+        bottom                : 'auto',
+        marginRight           : '-50%',
+        width                 : '50%',
+        transform             : 'translate(-50%, -50%)',
+        backgroundColor       : 'transparent',
+        border                : 'none'
+    } 
+  };
+
+  return (
     <div id="shop-wrapper">
+      <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          contentLabel="Checkout Delivery Address Modal"
+          style={customModalStyles}
+      >
+        <div className="row">
+          <div className="col-12" align="center">
+            <div class="spinner-border text-warning" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </Modal>
       <div className="container-fluid p-0">
         <div className="row no-gutters">
           <h1 className="heading">Your Donation Matters</h1>

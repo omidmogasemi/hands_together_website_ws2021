@@ -25,7 +25,8 @@ function Navbar(props) {
   const [ZIP, setZIP] = useState('');
   const [drawerState, setDrawerState] = useState(false);
   const [modalWidth, setModalWidth] = useState(window.innerWidth > 1024 ? '60%' : '90%'); 
-
+  const [displaySpinningIcon, shouldDisplaySpinningIcon] = useState(false); 
+  
   function handleDrawerState() {
     let newState = !drawerState;
     setDrawerState(newState);
@@ -72,6 +73,7 @@ function Navbar(props) {
   };
 
   async function checkout() {
+    shouldDisplaySpinningIcon(true); 
     let quota = window.localStorage.getItem("QUOTA")
     if (!quota) {
       alert("Your cart is currently empty. Add items to your cart on the shop page.");
@@ -332,6 +334,11 @@ function Navbar(props) {
             <div className="checkout-button-container col-12">
               <button className="btn checkOutButton" onClick={checkout}>Check-Out</button>
             </div>
+            { displaySpinningIcon && 
+            <div class="spinner-border text-warning" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            }
           </div>
         </Modal>
         <div className="col-2 offset-md-5" align="center">
