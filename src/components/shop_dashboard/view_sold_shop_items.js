@@ -182,16 +182,24 @@ function ViewSoldShopItems() {
                 </div>
                 <div className="row">
                     <div className="col-6">
-                        <h2>Items Sold</h2>
+                        <h2 style={{paddingBottom: "1rem"}}>Items Sold</h2>
                         <div className="col-12">
                             <div className="row"> 
                                 { selectedItem ? 
                                     selectedItem.map((itemIter, index) => 
-                                        <div className="col-6" key={index}> 
-                                            <h2>{itemIter.name}</h2> 
-                                            <h3>Quantity: {itemIter.quantity}</h3> 
-                                            <h3>Price: {getFormattedPrice(itemIter.price)}</h3> 
-                                            <p>Cancelled? <strong>{itemIter.cancelled ? "This item has been fully or partially canceled" : "No"}</strong></p> 
+                                        <div className="col-12" key={index}> 
+                                            <div className="row no-gutters align-items-center">
+                                                <div className="col-6">
+                                                    <h2>{itemIter.name}</h2> 
+                                                </div> 
+                                                <div className="col-3">
+                                                    <h3>Quantity: {itemIter.quantity}</h3> 
+                                                </div> 
+                                                <div className="col-3">
+                                                    <h3>Price: {getFormattedPrice(itemIter.price)}</h3>
+                                                </div> 
+                                                <hr style={{border: "1px solid gray", width: "100%"}} />
+                                            </div>  
                                         </div> 
                                     ) 
                                     : <p>Loading...</p>
@@ -210,29 +218,15 @@ function ViewSoldShopItems() {
                         <h2>Cancel Order</h2>
                         <div className="col-12">
                             <div className="row"> 
-                            <h2>To issue a full or partial cancellation, please visit your Stripe dashboard as we implement cancellations through the admin dashboard.</h2>
-                                {/* { selectedItem ? 
-                                    selectedItem.map((itemIter, index) => 
-                                    <>
-                                        <div className="col-6" key={index}> 
-                                            <h3>{itemIter.name}</h3> 
-                                        </div> 
-                                        <div className="col-6" style={{marginBottom: "1rem"}} key={index}> 
-                                            <input type="checkbox" onChange={() => adjustCancelledItems(itemIter)} /> 
-                                        </div> 
-                                    </>
-                                    ) 
-                                    : <p>Loading...</p>
-                                } */}
+                            <h2>To issue a full or partial cancellation, please visit your Stripe dashboard.</h2>
                             </div> 
                         </div> 
-                        <button className="submit-button hands-together-button" onClick={() => cancelOrder()}>Cancel Items</button>
                         <p>{uploadMessage}</p>
                     </div> 
                 </div>
             </Modal> 
             <div className="row no-gutters view-container"> 
-                <h1 className="title-text">Sold Items</h1>
+                <h1 className="title-text" style={{paddingLeft: "0rem"}}>Sold Items</h1>
                 <p className="title-text"><br/>{
                     "Showing " + (6 * (curPage - 1) + 1) + "-" 
                     + Math.min((6 * curPage), itemArray.data.length) 
@@ -240,7 +234,7 @@ function ViewSoldShopItems() {
                 }</p> 
                 <div className="col-12">
                     <div className="row">
-                        { items ?
+                        { items.length > 0 ?
                             items.map((itemIter, index) =>
                             <div className="col-md-4" key={index}>
                                 {console.log(itemIter)} 
@@ -257,25 +251,27 @@ function ViewSoldShopItems() {
                                 </div> 
                             </div>
                             )
-                            : <p>Loading...</p>
+                            : <p>There are currently no sold items in the shop.</p>
                         }
                     </div>
                 </div>
 
-                <nav aria-label="pages">
-                <button className="back-button" tabIndex="-1" onClick={back}>Back</button>
-                {(() => {
-                    // Generate one button for each page
-                    let pageList = [];
-                    for (let i = 0; i < Math.ceil(parseFloat(itemArray.data.length) / 6); i++) {
-                    pageList.push(
-                        <button className="page-num-button" key={i} id={i + 1} onClick={handlePageClick}>{i + 1}</button>
-                    )
-                    }
-                    return pageList;
-                })()}
-                <button className="next-button" tabIndex="-2" onClick={next}>Next</button>
-                </nav>
+                {items.length > 0 && 
+                    <nav aria-label="pages">
+                    <button className="back-button" tabIndex="-1" onClick={back}>Back</button>
+                    {(() => {
+                        // Generate one button for each page
+                        let pageList = [];
+                        for (let i = 0; i < Math.ceil(parseFloat(itemArray.data.length) / 6); i++) {
+                        pageList.push(
+                            <button className="page-num-button" key={i} id={i + 1} onClick={handlePageClick}>{i + 1}</button>
+                        )
+                        }
+                        return pageList;
+                    })()}
+                    <button className="next-button" tabIndex="-2" onClick={next}>Next</button>
+                    </nav>
+                }
             </div>
         </div>
     );

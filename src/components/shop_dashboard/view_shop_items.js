@@ -14,11 +14,6 @@ function ViewShopItems() {
     const [description, setDescription] = useState(''); 
     const [quantity, setQuantity] = useState(''); 
     const [uploadMessage, setUploadMessage] = useState(""); 
-    
-    function logout() {
-        axios.delete('https://db.handstogether-sa.org/jwt/deleteRefreshToken', { withCredentials: true })
-         .then(() => window.location.assign('https://handstogether-sa.org'))
-    }
 
     function openModal(item) { 
         setCurItem(item);
@@ -222,18 +217,15 @@ function ViewShopItems() {
                 <button className="confirm-button" onClick={deleteCurItem}>Yes</button>
             </Modal>
             <div className="row no-gutters view-container"> 
-                <h1 className="title-text">Active Listings</h1>
+                <h1 className="title-text" style={{paddingLeft: "0rem"}}>Active Listings</h1>
                 <p className="title-text"><br/>{
                     "Showing " + (6 * (curPage - 1) + 1) + "-" 
                     + Math.min((6 * curPage), itemArray.data.length) 
                     + " of " + itemArray.data.length + " results"
                 }</p>
-                <div className="col-4" align="right">
-                    <button className="submit-button" onClick={logout}>Log Out</button>
-                </div>
                 <div className="col-12">
                     <div className="row">
-                        { items ?
+                        { items.length > 0 ?
                             items.map((itemIter, index) =>
                             <div className="col-md-4" key={index}>
                                 <div className="item-container">
@@ -253,25 +245,27 @@ function ViewShopItems() {
                                 </div>
                             </div>
                             )
-                            : <p>Loading...</p>
+                            : <p>There are currently no listed items in the shop.</p>
                         }
                     </div>
                 </div> 
 
-                <nav aria-label="pages">
-                <button className="back-button" tabIndex="-1" onClick={back}>Back</button>
-                {(() => {
-                    // Generate one button for each page
-                    let pageList = [];
-                    for (let i = 0; i < Math.ceil(parseFloat(itemArray.data.length) / 6); i++) {
-                    pageList.push(
-                        <button className="page-num-button" key={i} id={i + 1} onClick={handlePageClick}>{i + 1}</button>
-                    )
-                    }
-                    return pageList;
-                })()}
-                <button className="next-button" tabIndex="-2" onClick={next}>Next</button>
-                </nav>
+                { items.length > 0 && 
+                    <nav aria-label="pages">
+                    <button className="back-button" tabIndex="-1" onClick={back}>Back</button>
+                    {(() => {
+                        // Generate one button for each page
+                        let pageList = [];
+                        for (let i = 0; i < Math.ceil(parseFloat(itemArray.data.length) / 6); i++) {
+                        pageList.push(
+                            <button className="page-num-button" key={i} id={i + 1} onClick={handlePageClick}>{i + 1}</button>
+                        )
+                        }
+                        return pageList;
+                    })()}
+                    <button className="next-button" tabIndex="-2" onClick={next}>Next</button>
+                    </nav>
+                }
             </div>
             <ViewSoldShopItems />
         </div>
