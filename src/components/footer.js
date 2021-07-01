@@ -22,7 +22,7 @@ function Footer() {
                 <div class="container-fluid p-0">
                     <div class="row no-gutters">
                         {/* <div className="space" /> */}
-                        <div class="col-12 col-md-5 col-lg-6 info-display">
+                        <div class="col-12 col-md-5 col-lg-5 info-display">
                             <p> <b>Hands Together:</b> a center for children</p>
                             {/* <div className="space" /> */}
                             <br></br>
@@ -33,7 +33,7 @@ function Footer() {
                         
                         <div className="col-md-1 sponsor-display" style={{borderRight: "white solid 2px"}} />                     
                         
-                        <div class="col-md-6 col-lg-5 sponsor-display align-items-center" >
+                        <div class="col-md-6 col-lg-6 sponsor-display align-items-center" >
                             <h2 class="thank-you-text bold">Thank you to our sponsors!</h2>
                             
                             <div class="row no-gutters justify-content-center circles-row" style={{paddingRight:10}}>
