@@ -71,7 +71,7 @@ p {
 .item-image {
   width: 100%;
   background-size: cover;
-  padding-top: 100%;
+  padding-top: 66%;
 }
 .name-price {
   display: flex;
